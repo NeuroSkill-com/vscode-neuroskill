@@ -282,5 +282,8 @@
     "glob": "^13.0.6",
     "mocha": "^11.7.5",
     "typescript": "^5.4.0"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
   }
 }
