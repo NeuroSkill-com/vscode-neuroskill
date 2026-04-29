@@ -25,7 +25,7 @@ Output is a structured view of *what already happened* in your editor, with the 
 
 **It is not:**
 
-- **Not a medical device.** No EEG output is diagnostic. See the disclaimer above.
+- **Not a medical device.** EEG output in this application is not and cannot be used for any type of medical or health-related diagnostic. See the disclaimer above.
 - **Not a flow detector.** "In flow" is a thresholded heuristic, not a validated classifier of the construct described by Csikszentmihalyi [[1]](#references). It has not been calibrated against experience-sampling ground truth.
 - **Not a productivity score for managers.** There is no team dashboard, no upload, no shared aggregate. The data lives in your home directory and goes nowhere else.
 - **Not peer-reviewed.** The integration is original work; the underlying constructs (flow, deep work, EEG band ratios as attention proxies) are referenced from the literature but our specific implementation has not been independently validated.
@@ -295,9 +295,9 @@ No accounts, no PATs, no config. Pin a port in `neuroskill.daemonPort` if you ne
 
 ---
 
-## Privacy — concrete claims
+## Privacy 
 
-- All HTTP traffic is to `127.0.0.1`. The extension does not phone home.
+- All HTTP traffic is to `127.0.0.1`. 
 - No file content is read or sent. Only line-count deltas, file paths, and metadata.
 - No clipboard content is read. Only the fact that the clipboard changed (size class), debounced.
 - Auth token is local-only; written by the NeuroSkill app to your user config dir, readable only by your user.
