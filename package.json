@@ -1,0 +1,170 @@
+{
+  "name": "neuroskill",
+  "displayName": "%ext.displayName%",
+  "description": "%ext.description%",
+  "l10n": "./l10n",
+  "version": "0.0.1",
+  "publisher": "neuroskill",
+  "license": "GPL-3.0-only",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NeuroSkill-com/vscode-neuroskill"
+  },
+  "bugs": {
+    "url": "https://github.com/NeuroSkill-com/vscode-neuroskill/issues"
+  },
+  "homepage": "https://github.com/NeuroSkill-com/vscode-neuroskill#readme",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Visualization",
+    "Data Science",
+    "AI",
+    "Other"
+  ],
+  "keywords": [
+    "productivity",
+    "focus",
+    "flow",
+    "eeg",
+    "neurofeedback",
+    "brain",
+    "ai-tracking",
+    "copilot",
+    "deep-work",
+    "wellness",
+    "burnout",
+    "telemetry",
+    "analytics",
+    "quantified-self"
+  ],
+  "galleryBanner": {
+    "color": "#0b1020",
+    "theme": "dark"
+  },
+  "pricing": "Free",
+  "qna": "https://github.com/NeuroSkill-com/vscode-neuroskill/discussions",
+  "sponsor": {
+    "url": "https://github.com/sponsors/NeuroSkill-com"
+  },
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true,
+      "description": "NeuroSkill only reads activity metadata (file paths, edit counts, diagnostics) and never reads file contents."
+    }
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "neuroskill",
+          "title": "NeuroSkill",
+          "icon": "media/brain.svg"
+        }
+      ]
+    },
+    "views": {
+      "neuroskill": [
+        {
+          "type": "webview",
+          "id": "neuroskill.sidebar",
+          "name": "Brain State"
+        }
+      ]
+    },
+    "commands": [
+      { "command": "neuroskill.reconnect", "title": "%cmd.reconnect%" },
+      { "command": "neuroskill.showBrainStatus", "title": "%cmd.showBrainStatus%" },
+      { "command": "neuroskill.showReport", "title": "%cmd.showReport%" },
+      { "command": "neuroskill.amIStuck", "title": "%cmd.amIStuck%" },
+      { "command": "neuroskill.bestTimeToCode", "title": "%cmd.bestTimeToCode%" },
+      { "command": "neuroskill.showFilesNeedingReview", "title": "%cmd.showFilesNeedingReview%" },
+      { "command": "neuroskill.toggleFlowShield", "title": "%cmd.toggleFlowShield%" },
+      { "command": "neuroskill.takeBreak", "title": "%cmd.takeBreak%" },
+      { "command": "neuroskill.togglePause", "title": "%cmd.togglePause%" },
+      { "command": "neuroskill.pauseTracking", "title": "%cmd.pauseTracking%" },
+      { "command": "neuroskill.resumeTracking", "title": "%cmd.resumeTracking%" },
+      { "command": "neuroskill.showOutput", "title": "%cmd.showOutput%" },
+      { "command": "neuroskill.openValidationSettings", "title": "%cmd.openValidationSettings%" },
+      { "command": "neuroskill.checkValidationPrompt", "title": "%cmd.checkValidationPrompt%" }
+    ],
+    "configuration": {
+      "title": "NeuroSkill",
+      "properties": {
+        "neuroskill.enabled": { "type": "boolean", "default": true, "description": "%cfg.enabled%" },
+        "neuroskill.daemonHost": { "type": "string", "default": "127.0.0.1", "description": "%cfg.daemonHost%" },
+        "neuroskill.daemonPort": { "type": "number", "default": 0, "description": "%cfg.daemonPort%" },
+        "neuroskill.trackUndos": { "type": "boolean", "default": true, "description": "%cfg.trackUndos%" },
+        "neuroskill.trackDiagnostics": { "type": "boolean", "default": true, "description": "%cfg.trackDiagnostics%" },
+        "neuroskill.batchIntervalMs": { "type": "number", "default": 2000, "description": "%cfg.batchIntervalMs%" },
+        "neuroskill.focusCodeLens": { "type": "boolean", "default": true, "description": "%cfg.focusCodeLens%" },
+        "neuroskill.flowShield": { "type": "boolean", "default": true, "description": "%cfg.flowShield%" },
+        "neuroskill.breakCoach": { "type": "boolean", "default": true, "description": "%cfg.breakCoach%" },
+        "neuroskill.struggleBridge": { "type": "boolean", "default": true, "description": "%cfg.struggleBridge%" },
+        "neuroskill.flowTriggers": { "type": "boolean", "default": true, "description": "%cfg.flowTriggers%" },
+        "neuroskill.focusCommits": { "type": "boolean", "default": true, "description": "%cfg.focusCommits%" },
+        "neuroskill.taskRouter": { "type": "boolean", "default": true, "description": "%cfg.taskRouter%" },
+        "neuroskill.eegHeatmap": { "type": "boolean", "default": true, "description": "%cfg.eegHeatmap%" },
+        "neuroskill.notifications": {
+          "type": "string",
+          "enum": ["all", "critical", "off"],
+          "enumDescriptions": ["%cfg.notifications.all%", "%cfg.notifications.critical%", "%cfg.notifications.off%"],
+          "default": "critical",
+          "description": "%cfg.notifications%"
+        },
+        "neuroskill.systemNotifications": {
+          "type": "string",
+          "enum": ["never", "critical", "always"],
+          "enumDescriptions": ["%cfg.systemNotifications.never%", "%cfg.systemNotifications.critical%", "%cfg.systemNotifications.always%"],
+          "default": "never",
+          "description": "%cfg.systemNotifications%"
+        },
+        "neuroskill.excludePaths": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/target/**",
+            "**/.venv/**",
+            "**/__pycache__/**"
+          ],
+          "description": "%cfg.excludePaths%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -watch -p tsconfig.json",
+    "package:readme": "node scripts/build-marketplace-readme.mjs",
+    "package": "npx @vscode/vsce package --no-dependencies && node scripts/restore-local-readme.mjs",
+    "package:marketplace": "npm run package:readme && npx @vscode/vsce package --no-dependencies --readme-path .marketplace.readme.md --baseImagesUrl '' && rm -f .marketplace.readme.md",
+    "screenshots": "cd ../.. && npx playwright test --config=extensions/vscode/scripts/playwright.config.ts",
+    "test": "node out/test/runTest.js",
+    "pretest": "npm run build"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.6.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.5.2",
+    "glob": "^13.0.6",
+    "mocha": "^11.7.5",
+    "typescript": "^5.4.0"
+  }
+}

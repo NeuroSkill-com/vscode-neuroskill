@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>NeuroSkill — Sidebar (in flow)</title>
+<link rel="stylesheet" href="_styles.css" />
+</head>
+<body>
+<div class="container">
+  <div class="logo-header">
+    <img class="logo" src="../../icon.png" alt="NeuroSkill" />
+    <span class="logo-text">NeuroSkill</span>
+  </div>
+
+  <div class="metric-card main">
+    <div class="focus-ring" style="--color: #22c55e">
+      <span class="focus-value">87</span>
+    </div>
+    <span class="focus-label">In Flow (47m)</span>
+    <span class="ai-ratio">Human: 78% · AI: 22%</span>
+  </div>
+
+  <div class="grid">
+    <div class="metric-card">
+      <span class="metric-icon">🟢</span>
+      <span class="metric-label">Energy</span>
+      <span class="metric-value">Good</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">🧠</span>
+      <span class="metric-label">Mode</span>
+      <span class="metric-value">Deep Work</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">⏱</span>
+      <span class="metric-label">Deep Work</span>
+      <span class="metric-value">142m today</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">⚡</span>
+      <span class="metric-label">Streak</span>
+      <span class="metric-value">7 days</span>
+    </div>
+  </div>
+
+  <details class="section" open>
+    <summary class="section-title">Focus Timeline</summary>
+    <svg width="100%" height="50" class="heatmap" viewBox="0 0 296 50" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ef4444"/>
+          <stop offset="20%" stop-color="#f59e0b"/>
+          <stop offset="45%" stop-color="#22c55e"/>
+          <stop offset="70%" stop-color="#22c55e"/>
+          <stop offset="85%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+      </defs>
+      <path d="M2,28 L20,30 L40,24 L60,18 L80,12 L100,10 L120,11 L140,14 L160,10 L180,8 L200,12 L220,16 L240,20 L260,28 L280,18 L294,14"
+            fill="none" stroke="url(#hg)" stroke-width="2" stroke-linecap="round"/>
+      <text x="2" y="46" class="hour-label" text-anchor="start">0:00</text>
+      <text x="74" y="46" class="hour-label">6:00</text>
+      <text x="148" y="46" class="hour-label">12:00</text>
+      <text x="222" y="46" class="hour-label">18:00</text>
+      <text x="288" y="46" class="hour-label" text-anchor="end">24:00</text>
+    </svg>
+  </details>
+
+  <details class="section" open>
+    <summary class="section-title">Your Flow Recipe</summary>
+    <ul class="trigger-list">
+      <li>Focus best on <strong>rust</strong> (84)</li>
+      <li>Peak hours: <strong>9:00, 10:00, 14:00</strong></li>
+      <li>Natural cycle: <strong>52m</strong></li>
+      <li>Flow killer: <strong>Slack</strong> (focus 38 at switch)</li>
+    </ul>
+  </details>
+
+  <details class="section" open>
+    <summary class="section-title">Recent Commits</summary>
+    <div class="commit-row">👤 <span class="commit-badge" style="color:#22c55e">87</span> <span class="commit-msg">fix(daemon): autodiscover dev port 18445</span></div>
+    <div class="commit-row">👤 <span class="commit-badge" style="color:#22c55e">79</span> <span class="commit-msg">refactor(sidebar): collapse heatmap into details</span></div>
+    <div class="commit-row">🤖 <span class="commit-badge" style="color:#9d9d9d">AI</span> <span class="commit-msg">test: add fixture for flow-state response</span></div>
+    <div class="commit-row">👤 <span class="commit-badge" style="color:#f59e0b">52</span> <span class="commit-msg">wip: trying out new task router heuristic</span></div>
+    <div class="commit-row">👤 <span class="commit-badge" style="color:#22c55e">82</span> <span class="commit-msg">feat(brain): expose ai-deep-analytics endpoint</span></div>
+  </details>
+
+  <details class="section" open>
+    <summary class="section-title">AI Insights (7d)</summary>
+    <div class="ai-metric">
+      <span class="ai-metric-label">AI Code Survival</span>
+      <div class="ai-bar"><div class="ai-bar-fill" style="width:74%;background:#f59e0b"></div></div>
+      <span class="ai-metric-value">74%</span>
+    </div>
+    <div class="ai-metric">
+      <span class="ai-metric-label">Needed Refinement</span>
+      <span class="ai-metric-value">31% of 142 accepted</span>
+    </div>
+    <div class="ai-metric">
+      <span class="ai-metric-label">Focus with AI vs without</span>
+      <span class="ai-metric-value" style="color:#22c55e">+4.2 pts</span>
+    </div>
+    <div class="ai-metric">
+      <span class="ai-metric-label">Best AI language</span>
+      <span class="ai-metric-value">typescript (89 accepted)</span>
+    </div>
+    <div class="ai-metric">
+      <span class="ai-metric-label">AI Invocations</span>
+      <span class="ai-metric-value">68% active · 32% passive</span>
+    </div>
+    <div class="ai-metric">
+      <span class="ai-metric-label">AI Code Undo Rate</span>
+      <span class="ai-metric-value">8.4%</span>
+    </div>
+  </details>
+
+  <div class="disclaimer" role="note">
+    <span class="disclaimer-icon">⚠️</span>
+    <span class="disclaimer-text">Research tool only — not a medical device. Not cleared by the FDA, CE, or any regulatory body. Not for clinical use.</span>
+  </div>
+</div>
+</body>
+</html>

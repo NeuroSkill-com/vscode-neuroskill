@@ -1,0 +1,116 @@
+name: Release
+
+# Triggered two ways:
+#
+# 1. Tag push (`git tag v0.0.2 && git push --tags`) — uses the version that's
+#    already in package.json. The tag must match (e.g. tag `v0.0.2` ↔
+#    `"version": "0.0.2"`).
+#
+# 2. workflow_dispatch — manual run from the Actions tab. Pick a semver bump
+#    (patch / minor / major) or a literal version. The workflow bumps
+#    package.json, commits, tags, and pushes — then publishes.
+#
+# Required repository secrets:
+#   VSCE_PAT  — Visual Studio Marketplace PAT (Marketplace › Manage scope)
+#   OVSX_PAT  — Open VSX token from https://open-vsx.org/user-settings/tokens
+#
+# Either secret may be omitted — the corresponding publish step will be
+# skipped instead of failing — so you can wire up Open VSX later if you want.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Semver bump (patch | minor | major) or literal x.y.z'
+        required: true
+        default: patch
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      OVSX_PAT: ${{ secrets.OVSX_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Use a token that can push back to main when bumping the version.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Bump version + tag (workflow_dispatch only)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          set -euo pipefail
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          npm version "${{ inputs.version }}" -m 'release: %s'
+          git push origin HEAD --follow-tags
+
+      - name: Verify tag matches package.json (tag push only)
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          PKG=$(node -p "require('./package.json').version")
+          TAG="${GITHUB_REF_NAME#v}"
+          if [ "$PKG" != "$TAG" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $PKG"
+            exit 1
+          fi
+
+      - name: Type-check + compile
+        run: npm run build
+
+      - name: Package .vsix
+        run: npm run package
+
+      - name: Locate .vsix
+        id: vsix
+        run: echo "path=$(ls neuroskill-*.vsix | head -1)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish to VS Code Marketplace
+        if: env.VSCE_PAT != ''
+        run: npx --yes @vscode/vsce publish --packagePath "${{ steps.vsix.outputs.path }}" --pat "$VSCE_PAT"
+
+      - name: Skip VS Code Marketplace
+        if: env.VSCE_PAT == ''
+        run: echo '::warning::VSCE_PAT secret is not set — skipping VS Code Marketplace publish'
+
+      - name: Publish to Open VSX
+        if: env.OVSX_PAT != ''
+        run: npx --yes ovsx publish "${{ steps.vsix.outputs.path }}" -p "$OVSX_PAT"
+
+      - name: Skip Open VSX
+        if: env.OVSX_PAT == ''
+        run: echo '::warning::OVSX_PAT secret is not set — skipping Open VSX publish'
+
+      - name: Resolve release tag
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" = 'push' ]; then
+            echo "name=$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=v$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release with .vsix attached
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          NOTES=$(awk '/^## /{n++} n==1{print} n==2{exit}' CHANGELOG.md || true)
+          gh release create "${{ steps.tag.outputs.name }}" "${{ steps.vsix.outputs.path }}" \
+            --title "${{ steps.tag.outputs.name }}" \
+            --notes "${NOTES:-See CHANGELOG.md.}"

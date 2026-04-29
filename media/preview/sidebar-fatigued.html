@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>NeuroSkill — Sidebar (fatigued)</title>
+<link rel="stylesheet" href="_styles.css" />
+</head>
+<body>
+<div class="container">
+  <div class="logo-header">
+    <img class="logo" src="../../icon.png" alt="NeuroSkill" />
+    <span class="logo-text">NeuroSkill</span>
+  </div>
+
+  <div class="metric-card main">
+    <div class="focus-ring" style="--color: #f59e0b">
+      <span class="focus-value" style="color:#f59e0b">42</span>
+    </div>
+    <span class="focus-label">Focus: 42/100</span>
+    <span class="ai-ratio">Human: 91% · AI: 9%</span>
+  </div>
+
+  <div class="grid">
+    <div class="metric-card">
+      <span class="metric-icon">🔴</span>
+      <span class="metric-label">Energy</span>
+      <span class="metric-value">Fatigued</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">🧠</span>
+      <span class="metric-label">Mode</span>
+      <span class="metric-value">Shallow</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">⏱</span>
+      <span class="metric-label">Deep Work</span>
+      <span class="metric-value">186m today</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">⚡</span>
+      <span class="metric-label">Streak</span>
+      <span class="metric-value">12 days</span>
+    </div>
+  </div>
+
+  <div class="suggestion">You've been deep for 3.1h with declining focus. A 15-minute walk now will pay back in 30+ effective minutes after.</div>
+
+  <details class="section" open>
+    <summary class="section-title">Focus Timeline</summary>
+    <svg width="100%" height="50" class="heatmap" viewBox="0 0 296 50" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ef4444"/>
+          <stop offset="20%" stop-color="#22c55e"/>
+          <stop offset="50%" stop-color="#22c55e"/>
+          <stop offset="75%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#ef4444"/>
+        </linearGradient>
+      </defs>
+      <path d="M2,30 L20,28 L40,16 L60,10 L80,8 L100,11 L120,14 L140,12 L160,18 L180,22 L200,26 L220,30 L240,34 L260,36 L280,38 L294,40"
+            fill="none" stroke="url(#hg)" stroke-width="2" stroke-linecap="round"/>
+      <text x="2" y="46" class="hour-label" text-anchor="start">0:00</text>
+      <text x="74" y="46" class="hour-label">6:00</text>
+      <text x="148" y="46" class="hour-label">12:00</text>
+      <text x="222" y="46" class="hour-label">18:00</text>
+      <text x="288" y="46" class="hour-label" text-anchor="end">24:00</text>
+    </svg>
+  </details>
+
+  <div class="disclaimer" role="note">
+    <span class="disclaimer-icon">⚠️</span>
+    <span class="disclaimer-text">Research tool only — not a medical device. Not cleared by the FDA, CE, or any regulatory body. Not for clinical use.</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>NeuroSkill — Sidebar (stuck)</title>
+<link rel="stylesheet" href="_styles.css" />
+</head>
+<body>
+<div class="container">
+  <div class="logo-header">
+    <img class="logo" src="../../icon.png" alt="NeuroSkill" />
+    <span class="logo-text">NeuroSkill</span>
+  </div>
+
+  <div class="metric-card main">
+    <div class="focus-ring" style="--color: #ef4444">
+      <span class="focus-value" style="color:#ef4444">38</span>
+    </div>
+    <span class="focus-label">Focus: 38/100</span>
+    <span class="ai-ratio">Human: 96% · AI: 4%</span>
+  </div>
+
+  <div class="grid">
+    <div class="metric-card">
+      <span class="metric-icon">🟢</span>
+      <span class="metric-label">Energy</span>
+      <span class="metric-value">Good</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">🧠</span>
+      <span class="metric-label">Mode</span>
+      <span class="metric-value">Debugging</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">⏱</span>
+      <span class="metric-label">Deep Work</span>
+      <span class="metric-value">38m today</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-icon">⚡</span>
+      <span class="metric-label">Streak</span>
+      <span class="metric-value">3 days</span>
+    </div>
+  </div>
+
+  <div class="suggestion error">
+    Stuck on <strong>auth/middleware.ts</strong> for 28m — undos at 4.2× baseline, 5 errors persisting. Try a different file, ask AI for a second opinion, or step away for 10m.
+  </div>
+
+  <details class="section" open>
+    <summary class="section-title">Recent Commits</summary>
+    <div class="commit-row">👤 <span class="commit-badge" style="color:#ef4444">31</span> <span class="commit-msg">wip: still debugging the session refresh path</span></div>
+    <div class="commit-row">👤 <span class="commit-badge" style="color:#ef4444">28</span> <span class="commit-msg">revert "fix: try refactoring middleware"</span></div>
+    <div class="commit-row">👤 <span class="commit-badge" style="color:#f59e0b">44</span> <span class="commit-msg">fix: try refactoring middleware</span></div>
+  </details>
+
+  <div class="disclaimer" role="note">
+    <span class="disclaimer-icon">⚠️</span>
+    <span class="disclaimer-text">Research tool only — not a medical device. Not cleared by the FDA, CE, or any regulatory body. Not for clinical use.</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+src/**
+out/test/**
+.vscode-test/**
+tsconfig.json
+node_modules/**
+.gitignore
+*.vsix
+media/preview/**
+scripts/**
+.github/**
+.marketplace.readme.md
