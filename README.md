@@ -145,7 +145,7 @@ Per-event counting from the extensions listed in [What it measures](#what-it-mea
 
 ### Fatigue / Break Coach
 
-> "Is your focus decaying enough that a break would pay back?"
+> "Is your focus dropping enough that a break could be useful?"
 
 Heuristic on the slope of focus_score over the last 30 minutes plus the cumulative deep-work minutes today. The "take a break" prompt fires when the slope is negative *and* you've been pushing for ≥ 90 minutes by default. **Not validated** against any objective fatigue measure (e.g., Karolinska Sleepiness Scale, PVT lapses).
 
