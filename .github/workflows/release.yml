@@ -74,7 +74,7 @@ jobs:
         run: npm run build
 
       - name: Package .vsix
-        run: npm run package
+        run: npm run package:marketplace
 
       - name: Locate .vsix
         id: vsix

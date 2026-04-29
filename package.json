@@ -3,7 +3,7 @@
   "displayName": "%ext.displayName%",
   "description": "%ext.description%",
   "l10n": "./l10n",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "neuroskill",
   "license": "GPL-3.0-only",
   "icon": "icon.png",
