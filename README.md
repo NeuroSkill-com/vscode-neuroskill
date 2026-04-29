@@ -13,7 +13,7 @@ Output is a structured view of *what already happened* in your editor, with the 
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="media/screenshots/sidebar-connected-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="media/screenshots/sidebar-connected-light.png">
-    <img src="media/screenshots/sidebar-connected-dark.png" alt="NeuroSkill sidebar showing live focus score, flow state, deep-work streak, focus timeline, flow recipe, recent commits and AI insights" width="320" />
+    <img src="https://github.com/NeuroSkill-com/vscode-neuroskill/raw/main/media/screenshots/sidebar-connected-light.png" alt="NeuroSkill sidebar showing live focus score, flow state, deep-work streak, focus timeline, flow recipe, recent commits and AI insights" width="320" />
   </picture>
 </p>
 
@@ -195,7 +195,7 @@ When this section's "planned" entries flip to "shipped", they will move into the
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="media/screenshots/sidebar-connected-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="media/screenshots/sidebar-connected-light.png">
-    <img src="media/screenshots/sidebar-connected-dark.png" alt="Connected sidebar in flow state — focus 87, 47m flow timer, deep-work streak, focus timeline, flow recipe, recent commits, AI insights" width="280"/>
+    <img src="https://github.com/NeuroSkill-com/vscode-neuroskill/raw/main/media/screenshots/sidebar-connected-light.png" alt="Connected sidebar in flow state — focus 87, 47m flow timer, deep-work streak, focus timeline, flow recipe, recent commits, AI insights" width="280"/>
   </picture>
 </td>
 <td align="center" valign="top">
@@ -204,7 +204,7 @@ When this section's "planned" entries flip to "shipped", they will move into the
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="media/screenshots/sidebar-stuck-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="media/screenshots/sidebar-stuck-light.png">
-    <img src="media/screenshots/sidebar-stuck-dark.png" alt="Sidebar showing red focus ring at 38, debugging mode, stuck warning, low-focus recent commits" width="280"/>
+    <img src="https://github.com/NeuroSkill-com/vscode-neuroskill/raw/main/media/screenshots/sidebar-stuck-light.png" alt="Sidebar showing red focus ring at 38, debugging mode, stuck warning, low-focus recent commits" width="280"/>
   </picture>
 </td>
 </tr>
@@ -215,7 +215,7 @@ When this section's "planned" entries flip to "shipped", they will move into the
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="media/screenshots/sidebar-fatigued-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="media/screenshots/sidebar-fatigued-light.png">
-    <img src="media/screenshots/sidebar-fatigued-dark.png" alt="Sidebar showing amber focus ring at 42, fatigued energy, break suggestion" width="280"/>
+    <img src="https://github.com/NeuroSkill-com/vscode-neuroskill/raw/main/media/screenshots/sidebar-fatigued-light.png" alt="Sidebar showing amber focus ring at 42, fatigued energy, break suggestion" width="280"/>
   </picture>
 </td>
 <td align="center" valign="top">
@@ -224,7 +224,7 @@ When this section's "planned" entries flip to "shipped", they will move into the
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="media/screenshots/sidebar-low-focus-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="media/screenshots/sidebar-low-focus-light.png">
-    <img src="media/screenshots/sidebar-low-focus-dark.png" alt="Sidebar showing focus 54, exploring mode, no streak, flow recipe with peak-hours suggestions" width="280"/>
+    <img src="https://github.com/NeuroSkill-com/vscode-neuroskill/raw/main/media/screenshots/sidebar-low-focus-light.png" alt="Sidebar showing focus 54, exploring mode, no streak, flow recipe with peak-hours suggestions" width="280"/>
   </picture>
 </td>
 </tr>
@@ -235,7 +235,7 @@ When this section's "planned" entries flip to "shipped", they will move into the
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="media/screenshots/sidebar-disconnected-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="media/screenshots/sidebar-disconnected-light.png">
-    <img src="media/screenshots/sidebar-disconnected-dark.png" alt="Disconnected sidebar with research-use disclaimer" width="280"/>
+    <img src="https://github.com/NeuroSkill-com/vscode-neuroskill/raw/main/media/screenshots/sidebar-disconnected-light.png" alt="Disconnected sidebar with research-use disclaimer" width="280"/>
   </picture>
 </td>
 <td align="center" valign="top">
@@ -244,7 +244,7 @@ When this section's "planned" entries flip to "shipped", they will move into the
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="media/screenshots/statusbar-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="media/screenshots/statusbar-light.png">
-    <img src="media/screenshots/statusbar-dark.png" alt="Three example status bars: in-flow, debugging-while-stuck, idle-disconnected" width="280"/>
+    <img src="https://github.com/NeuroSkill-com/vscode-neuroskill/raw/main/media/screenshots/statusbar-light.png" alt="Three example status bars: in-flow, debugging-while-stuck, idle-disconnected" width="280"/>
   </picture>
 </td>
 </tr>
