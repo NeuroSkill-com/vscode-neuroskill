@@ -1,6 +1,6 @@
 # NeuroSkill™ for VS Code
 
-**An attention-instrumentation layer for the IDE. Records how you work, infers a documented focus signal, optionally correlates it with EEG band power.** See "What this is, and isn't" below for more.
+**An attention-instrumentation layer for the IDE. Records how you work, infers a documented focus signal, optionally correlates it with EEG band powers.** See "What this is, and isn't" below for more.
 
 > ⚠️ **Research tool only — not a medical system or device.**
 > NeuroSkill is open-source software for exploratory research on developer attention and EEG. It is **not** cleared or approved by the FDA, CE, or any regulatory body. It must not be used for clinical diagnosis, treatment decisions, or any medical purpose. All metrics are experimental research outputs — not validated clinical measurements. Do not rely on any output of this software for health-related decisions. Consult a qualified healthcare professional for any medical concerns.
@@ -406,7 +406,7 @@ A successful run produces:
 
 ## Disclaimer
 
-NeuroSkill is a research tool only. It is **not** a medical device, has **not** been cleared or approved by the FDA, CE, or any regulatory body, and must not be used for clinical diagnosis, treatment decisions, or any medical purpose. All metrics are experimental research outputs — not validated clinical measurements. Do not rely on any output of this software for health-related decisions. Consult a qualified healthcare professional for any medical concerns. EEG signal quality is sensitive to electrode fit, placement, skin contact, motion, and stimulants (caffeine in particular [[4]](#references)).
+NeuroSkill is a research tool only. It is **not** a medical device/system, has **not** been cleared or approved by the FDA, CE, or any regulatory body, and must not be used for clinical diagnosis, treatment decisions, or any medical purpose. All metrics are experimental research outputs — not validated clinical measurements. Do not rely on any output of this software for health-related decisions. Consult a qualified healthcare professional for any medical concerns. EEG signal quality is sensitive to electrode fit, placement, skin contact, motion, and stimulants (caffeine in particular [[4]](#references)).
 
 ## License
 
