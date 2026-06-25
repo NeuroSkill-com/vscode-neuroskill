@@ -2,7 +2,7 @@
 
 **An attention-instrumentation layer for the IDE. Records how you work, infers a documented focus signal, optionally correlates it with EEG band power.** See "What this is, and isn't" below for more.
 
-> ⚠️ **Research tool only — not a medical device.**
+> ⚠️ **Research tool only — not a medical system or device.**
 > NeuroSkill is open-source software for exploratory research on developer attention and EEG. It is **not** cleared or approved by the FDA, CE, or any regulatory body. It must not be used for clinical diagnosis, treatment decisions, or any medical purpose. All metrics are experimental research outputs — not validated clinical measurements. Do not rely on any output of this software for health-related decisions. Consult a qualified healthcare professional for any medical concerns.
 
 The extension records *how* the editor is being used (file focus, edit cadence, undo/redo rate, diagnostics, AI-assist acceptances, build outcomes, git operations) and feeds that to a local daemon. The daemon computes a documented set of derived metrics — a focus score, a flow heuristic, a fatigue heuristic, AI/human attribution — and, if a NeuroSkill EEG headset is streaming, time-aligns those signals with frequency-band power (δ, θ, α, β, γ).
